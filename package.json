@@ -1,0 +1,15 @@
+{
+    "name": "BIDIT",
+    "version": "1.0.0",
+    "description": "A WEB APP, FACILITATING AN AUCTION PROCESS",
+    "main": "server.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ilhan007/BIDIT.git"
+    },
+    "dependencies": {
+
+    },
+    "license": "SEE LICENSE IN LICENSE",
+    "email": "ilhan.orhan007@gmail.com"
+}

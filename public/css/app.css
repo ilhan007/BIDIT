@@ -13,37 +13,39 @@ body {
     padding: 1rem;
 }
 
-.list-group > .list-group-item:hover {
+.list .list-group > .list-group-item:hover {
     cursor: pointer;
     background-color: #4b5968;
 }
 
-.list-group > .list-group-item {
+.list .list-group > .list-group-item {
     border-radius: 5px;
 }
 
-.list-group > .list-group-item > .item-title,
-.list-group > .list-group-item > .item-price,
-.list-group > .list-group-item > .item-remaining {
+.list .list-group > .list-group-item > .item-title,
+.list .list-group > .list-group-item > .item-price,
+.list .list-group > .list-group-item > .item-remaining {
     font-weight: bold;
     font-size: 2rem;
 }
 
-.list-group > .list-group-item > .item-price {
+.list .list-group > .list-group-item > .item-price {
     color: #fff;
 }
 
-.list-group > .list-group-item > .item-desc {
+.list .list-group > .list-group-item > .item-desc {
     color: #DF691A;
     font-size: 1.5rem;
 }
 
-.list-group > .list-group-item > .item-id,
-.list-group > .list-group-item > .item-remaining {
+.list .list-group > .list-group-item > .item-id,
+.list .list-group > .list-group-item > .item-remaining {
     display: block;
 }
 
-
+.list .form-search:focus{
+    border: 0.125rem solid #DF691A;
+}
 
 /*
  * Util css
@@ -59,4 +61,8 @@ body {
 
 .rounded {
     border-radius: 5px;
+}
+
+.bottom-offset {
+    margin-bottom: 2rem;
 }

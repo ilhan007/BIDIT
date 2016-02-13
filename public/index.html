@@ -41,23 +41,21 @@
             <h1 class="center">BIDIT</h1>
             <h1 class="center compact"><small>like never before</small></h1>
         </div>
-        <div ng-controller="ItemCtrl">
-        	<!-- <div class="row">
-
-            	<input type="text" class="form-control rounded" 
-            	placeholder="Search By Item ID" 
-            	aria-describedby="basic-addon1">
-            </div> -->
-
-            <ul class="list-group" ng-repeat="item in items">
-                    <li class="list-group-item">
-                        <span class="item-title">{{ item.title }}</span>
-                        <span class="badge item-price">{{ item.price }}</span>|
-                        <span class="item-desc">{{ item.description }}</span>
-                        <span class="item-id"> {{ item.id }} </span>
-                        <span class="item-remaining center"> {{ item.remaining }} </span>
-                    </li>
-                </ul>
+        <div class="list" ng-controller="ItemCtrl">
+            <div class="row bottom-offset">
+                <div class="col-lg-offset-3 col-md-offset-3 col-lg-6 col-md-6">
+                    <input type="text" class="form-control form-search rounded" placeholder="Search Item" aria-describedby="basic-addon1" ng-model="filterValue">
+                </div>
+            </div>
+            <ul class="list-group" ng-repeat="item in items | filter:filterValue">
+                <li class="list-group-item">
+                    <span class="item-title">{{ item.title }}</span>
+                    <span class="badge item-price">{{ item.price }}</span>|
+                    <span class="item-desc">{{ item.description }}</span>
+                    <span class="item-id"> {{ item.id }} </span>
+                    <span class="item-remaining center"> {{ item.remaining }} </span>
+                </li>
+            </ul>
         </div>
     </div>
     <!-- Load Scripts -->
