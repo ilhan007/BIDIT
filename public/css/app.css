@@ -13,17 +13,50 @@ body {
     padding: 1rem;
 }
 
+.list-group > .list-group-item:hover {
+    cursor: pointer;
+    background-color: #4b5968;
+}
+
+.list-group > .list-group-item {
+    border-radius: 5px;
+}
+
+.list-group > .list-group-item > .item-title,
+.list-group > .list-group-item > .item-price,
+.list-group > .list-group-item > .item-remaining {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.list-group > .list-group-item > .item-price {
+    color: #fff;
+}
+
+.list-group > .list-group-item > .item-desc {
+    color: #DF691A;
+    font-size: 1.5rem;
+}
+
+.list-group > .list-group-item > .item-id,
+.list-group > .list-group-item > .item-remaining {
+    display: block;
+}
+
 
 
 /*
  * Util css
 */
-
 .center {
-	text-align: center;
+    text-align: center;
 }
 
 .compact {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.rounded {
+    border-radius: 5px;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="bidit">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="./css/app.css">
 </head>
 
-<body>
+<body ng-cloak>
     <div id="_page" class="page">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -39,12 +39,25 @@
         </nav>
         <div class="page-header">
             <h1 class="center">BIDIT</h1>
-            <h1 class="center compact"><small>easy as never before</small></h1>
+            <h1 class="center compact"><small>like never before</small></h1>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-body">
-                Basic panel example
-            </div>
+        <div ng-controller="ItemCtrl">
+        	<!-- <div class="row">
+
+            	<input type="text" class="form-control rounded" 
+            	placeholder="Search By Item ID" 
+            	aria-describedby="basic-addon1">
+            </div> -->
+
+            <ul class="list-group" ng-repeat="item in items">
+                    <li class="list-group-item">
+                        <span class="item-title">{{ item.title }}</span>
+                        <span class="badge item-price">{{ item.price }}</span>|
+                        <span class="item-desc">{{ item.description }}</span>
+                        <span class="item-id"> {{ item.id }} </span>
+                        <span class="item-remaining center"> {{ item.remaining }} </span>
+                    </li>
+                </ul>
         </div>
     </div>
     <!-- Load Scripts -->
@@ -52,6 +65,8 @@
     <script type="text/javascript" src="./lib/js/angular.min.js"></script>
     <script type="text/javascript" src="./lib/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
+    <script type="text/javascript" src="./app/list/Item.service.js"></script>
+    <script type="text/javascript" src="./app/list/ItemCtrl.js"></script>
 </body>
 
 </html>
