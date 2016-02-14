@@ -47,6 +47,13 @@
                     <input type="text" class="form-control form-search rounded" placeholder="Search Item" aria-describedby="basic-addon1" ng-model="filterValue">
                 </div>
             </div>
+            <div class="row bottom-offset text-center">
+                <ul id="messages"></ul>
+                <form action="">
+                    <input id="m" class="rounded" autocomplete="off" />
+                    <button class="btn-default">Send</button>
+                </form>
+            </div>
             <ul class="list-group" ng-repeat="item in items | filter:filterValue">
                 <li class="list-group-item">
                     <span class="item-title">{{ item.title }}</span>
@@ -62,9 +69,22 @@
     <script type="text/javascript" src="./public/lib/js/jquery-2.2.0.min.js"></script>
     <script type="text/javascript" src="./public/lib/js/angular.min.js"></script>
     <script type="text/javascript" src="./public/lib/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./public/lib/js/socket.io-1.4.5.js"></script>
     <script type="text/javascript" src="./public/js/app.js"></script>
     <script type="text/javascript" src="./public/app/list/Item.service.js"></script>
     <script type="text/javascript" src="./public/app/list/ItemCtrl.js"></script>
+    <script>
+    var socket = io();
+    $('form').submit(function() {
+        socket.emit('chat message', $('#m').val());
+        $('#m').val('');
+        return false;
+    });
+
+    socket.on('chat message', function(msg) {
+        $('#messages').append($('<li>').text(msg));
+    });
+    </script>
 </body>
 
 </html>
